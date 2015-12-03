@@ -122,6 +122,10 @@ endif
 endif
 
 
+ifeq ($(AUDIO_FEATURE_LOW_LATENCY_PRIMARY),true)
+    LOCAL_CFLAGS += -DLOW_LATENCY_PRIMARY
+endif
+
 LOCAL_SHARED_LIBRARIES := \
 	liblog \
 	libcutils \
@@ -158,6 +162,10 @@ endif
 
 ifeq ($(strip $(AUDIO_FEATURE_PCM_IOCTL_ENABLED)),true)
     LOCAL_CFLAGS += -DPCM_IOCTL_ENABLED
+endif
+
+ifeq ($(strip $(AUDIO_FEATURE_ENABLED_HWDEP_CAL)),true)
+    LOCAL_CFLAGS += -DHWDEP_CAL_ENABLED
 endif
 
 LOCAL_COPY_HEADERS_TO   := mm-audio
