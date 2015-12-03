@@ -34,7 +34,6 @@
 #include "audio_extn.h"
 #include "voice_extn.h"
 #include "sound/compress_params.h"
-#include "platform_parser.h"
 #ifdef HWDEP_CAL_ENABLED
 #include "sound/msmcal-hwdep.h"
 #endif
